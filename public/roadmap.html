@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Roadmaps - DevSpark</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/roadmap.css">
+    
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <a href="home.html">Dev<span>Spark</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="logs.html"><i class="fas fa-book"></i> Learning Logs</a></li>
+            <li><a href="roadmap.html" class="active"><i class="fas fa-road"></i> Roadmaps</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Mentors</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <button class="menu-toggle" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer;">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Learning Roadmaps</h1>
+                <p>Plan and track your learning journey with structured roadmaps</p>
+            </div>
+            <div class="user-menu">
+                <div class="user-avatar">AJ</div>
+                <div>
+                    <div style="font-weight: 600;">Alex Johnson</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">Intermediate Developer</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <div style="display: flex; gap: 1rem;">
+                <button class="btn btn-outline">
+                    <i class="fas fa-filter"></i> Filter
+                </button>
+                <select class="form-control" style="width: auto; padding: 0.5rem 1rem;">
+                    <option>All Roadmaps</option>
+                    <option>Active</option>
+                    <option>Completed</option>
+                    <option>Archived</option>
+                </select>
+            </div>
+            <button class="btn" id="createRoadmapBtn">
+                <i class="fas fa-plus"></i> Create Roadmap
+            </button>
+        </div>
+
+        <!-- Roadmaps Grid -->
+        <div class="roadmap-grid">
+            <!-- Full Stack JavaScript Roadmap -->
+            <div class="roadmap-card">
+                <div class="roadmap-header">
+                    <div>
+                        <div class="roadmap-title">Full Stack JavaScript</div>
+                        <span class="roadmap-category">Web Development</span>
+                    </div>
+                    <div class="roadmap-actions">
+                        <button class="btn btn-icon btn-outline" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="roadmap-description">
+                    Master modern JavaScript development from frontend to backend, including React, Node.js, and databases.
+                </p>
+                <div class="roadmap-progress">
+                    <div class="progress-info">
+                        <span>Progress</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="roadmap-stats">
+                    <div class="stat">
+                        <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                        <span>12/18 topics</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <span>42 hours</span>
+                    </div>
+                </div>
+                <div class="roadmap-actions">
+                    <button class="btn btn-sm">
+                        <i class="fas fa-play"></i> Continue
+                    </button>
+                    <button class="btn btn-sm btn-outline">
+                        <i class="fas fa-eye"></i> View
+                    </button>
+                </div>
+            </div>
+
+            <!-- React Mastery Roadmap -->
+            <div class="roadmap-card">
+                <div class="roadmap-header">
+                    <div>
+                        <div class="roadmap-title">React Mastery</div>
+                        <span class="roadmap-category">Frontend</span>
+                    </div>
+                    <div class="roadmap-actions">
+                        <button class="btn btn-icon btn-outline" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="roadmap-description">
+                    Deep dive into React ecosystem: hooks, context, state management, performance optimization, and testing.
+                </p>
+                <div class="roadmap-progress">
+                    <div class="progress-info">
+                        <span>Progress</span>
+                        <span>40%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="roadmap-stats">
+                    <div class="stat">
+                        <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                        <span>6/15 topics</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <span>28 hours</span>
+                    </div>
+                </div>
+                <div class="roadmap-actions">
+                    <button class="btn btn-sm">
+                        <i class="fas fa-play"></i> Continue
+                    </button>
+                    <button class="btn btn-sm btn-outline">
+                        <i class="fas fa-eye"></i> View
+                    </button>
+                </div>
+            </div>
+
+            <!-- Node.js Backend Roadmap -->
+            <div class="roadmap-card">
+                <div class="roadmap-header">
+                    <div>
+                        <div class="roadmap-title">Node.js Backend</div>
+                        <span class="roadmap-category">Backend</span>
+                    </div>
+                    <div class="roadmap-actions">
+                        <button class="btn btn-icon btn-outline" title="Edit">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="roadmap-description">
+                    Build scalable backend applications with Node.js, Express, databases, authentication, and deployment.
+                </p>
+                <div class="roadmap-progress">
+                    <div class="progress-info">
+                        <span>Progress</span>
+                        <span>25%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;"></div>
+                    </div>
+                </div>
+                <div class="roadmap-stats">
+                    <div class="stat">
+                        <i class="fas fa-check-circle" style="color: var(--success);"></i>
+                        <span>3/12 topics</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <span>15 hours</span>
+                    </div>
+                </div>
+                <div class="roadmap-actions">
+                    <button class="btn btn-sm">
+                        <i class="fas fa-play"></i> Continue
+                    </button>
+                    <button class="btn btn-sm btn-outline">
+                        <i class="fas fa-eye"></i> View
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty State (commented out for demo) -->
+        <!--
+        <div class="empty-state">
+            <i class="fas fa-road"></i>
+            <h3>No Roadmaps Yet</h3>
+            <p>Create your first learning roadmap to start tracking your progress systematically.</p>
+            <button class="btn" style="margin-top: 1rem;">
+                <i class="fas fa-plus"></i> Create Your First Roadmap
+            </button>
+        </div>
+        -->
+    </div>
+
+    <!-- Create Roadmap Modal -->
+    <div class="modal" id="createRoadmapModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Create New Roadmap</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="roadmapForm">
+                <div class="form-group">
+                    <label for="roadmapTitle">Roadmap Title</label>
+                    <input type="text" id="roadmapTitle" class="form-control" placeholder="e.g., Full Stack Web Development" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="roadmapDescription">Description</label>
+                    <textarea id="roadmapDescription" class="form-control" placeholder="Describe what this roadmap will help you achieve..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="roadmapCategory">Category</label>
+                        <select id="roadmapCategory" class="form-control" required>
+                            <option value="">Select category</option>
+                            <option value="web-dev">Web Development</option>
+                            <option value="mobile">Mobile Development</option>
+                            <option value="data-science">Data Science</option>
+                            <option value="devops">DevOps</option>
+                            <option value="soft-skills">Soft Skills</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="roadmapDifficulty">Difficulty Level</label>
+                        <select id="roadmapDifficulty" class="form-control" required>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Milestones</label>
+                    <div id="milestonesList">
+                        <div class="milestone-item">
+                            <div class="milestone-header">
+                                <div class="milestone-title">Foundation & Basics</div>
+                                <div class="milestone-actions">
+                                    <button type="button" class="btn btn-icon btn-outline btn-sm">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div style="font-size: 0.9rem; color: var(--gray);">HTML, CSS, JavaScript fundamentals</div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline btn-sm" style="margin-top: 0.5rem;">
+                        <i class="fas fa-plus"></i> Add Milestone
+                    </button>
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 2rem;">
+                    <button type="button" class="btn btn-outline" id="cancelRoadmap">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-save"></i> Create Roadmap
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="logs.html"><i class="fas fa-book"></i> Logs</a></li>
+            <li><a href="roadmap.html" class="active"><i class="fas fa-road"></i> Roadmaps</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Modal functionality
+        const createBtn = document.getElementById('createRoadmapBtn');
+        const modal = document.getElementById('createRoadmapModal');
+        const closeBtn = document.querySelector('.close-modal');
+        const cancelBtn = document.getElementById('cancelRoadmap');
+
+        createBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Form submission
+        document.getElementById('roadmapForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                title: document.getElementById('roadmapTitle').value,
+                description: document.getElementById('roadmapDescription').value,
+                category: document.getElementById('roadmapCategory').value,
+                difficulty: document.getElementById('roadmapDifficulty').value
+            };
+            
+            console.log('New roadmap:', formData);
+            // You'll connect this to your backend later
+            
+            // Close modal and reset form
+            modal.classList.remove('active');
+            this.reset();
+            
+            // Show success message
+            alert('Roadmap created successfully!');
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+
+        // Close sidebar when clicking on a link (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.sidebar').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

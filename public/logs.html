@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Logs - DevSpark</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="css/logs.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <a href="home.html">Dev<span>Spark</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="logs.html" class="active"><i class="fas fa-book"></i> Learning Logs</a></li>
+            <li><a href="roadmap.html"><i class="fas fa-road"></i> Roadmaps</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Mentors</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <button class="menu-toggle" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer;">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Learning Logs</h1>
+                <p>Track your daily learning activities and progress</p>
+            </div>
+            <div class="user-menu">
+                <div class="user-avatar">AJ</div>
+                <div>
+                    <div style="font-weight: 600;">Alex Johnson</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">Intermediate Developer</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Log Form -->
+        <div class="log-form-container">
+            <h2 class="form-title">Add New Learning Log</h2>
+            <form id="logForm">
+                <div class="form-group">
+                    <label for="logTitle">What did you learn today?</label>
+                    <input type="text" id="logTitle" class="form-control" placeholder="e.g., Built a React component, studied Node.js authentication..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="logDescription">Details & Notes</label>
+                    <textarea id="logDescription" class="form-control" placeholder="Describe what you learned, challenges faced, key takeaways..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="logCategory">Category</label>
+                        <select id="logCategory" class="form-control" required>
+                            <option value="">Select category</option>
+                            <option value="frontend">Frontend Development</option>
+                            <option value="backend">Backend Development</option>
+                            <option value="database">Database</option>
+                            <option value="tools">Tools & DevOps</option>
+                            <option value="soft-skills">Soft Skills</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="logDuration">Duration (hours)</label>
+                        <input type="number" id="logDuration" class="form-control" min="0.1" step="0.1" placeholder="1.5" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="logDate">Date</label>
+                        <input type="date" id="logDate" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="logTags">Tags (comma separated)</label>
+                        <input type="text" id="logTags" class="form-control" placeholder="react, hooks, components">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn" style="padding: 0.8rem 2rem;">
+                    <i class="fas fa-plus"></i> Add Learning Log
+                </button>
+            </form>
+        </div>
+
+        <!-- Logs List -->
+        <div class="logs-container">
+            <div class="section-header">
+                <h2>Recent Learning Logs</h2>
+                <div class="filters">
+                    <select class="filter-select">
+                        <option>All Categories</option>
+                        <option>Frontend</option>
+                        <option>Backend</option>
+                        <option>Database</option>
+                    </select>
+                    <select class="filter-select">
+                        <option>Last 7 Days</option>
+                        <option>Last 30 Days</option>
+                        <option>Last 3 Months</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="logs-list">
+                <div class="log-item">
+                    <div class="log-header">
+                        <div>
+                            <div class="log-title">Built React Authentication Flow</div>
+                            <div class="log-meta">
+                                <span><i class="fas fa-clock"></i> 2.5 hours</span>
+                                <span><i class="fas fa-calendar"></i> Today</span>
+                                <span><i class="fas fa-tag"></i> Frontend</span>
+                            </div>
+                        </div>
+                        <div class="log-actions">
+                            <button class="action-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="log-content">
+                        Implemented JWT authentication with React Context API. Created login, register, and protected route components. Learned about token storage best practices and axios interceptors.
+                    </div>
+                    <div class="log-tags">
+                        <span class="tag primary">react</span>
+                        <span class="tag primary">authentication</span>
+                        <span class="tag">context-api</span>
+                    </div>
+                </div>
+
+                <div class="log-item">
+                    <div class="log-header">
+                        <div>
+                            <div class="log-title">Node.js Express Middleware</div>
+                            <div class="log-meta">
+                                <span><i class="fas fa-clock"></i> 1.5 hours</span>
+                                <span><i class="fas fa-calendar"></i> Yesterday</span>
+                                <span><i class="fas fa-tag"></i> Backend</span>
+                            </div>
+                        </div>
+                        <div class="log-actions">
+                            <button class="action-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="log-content">
+                        Studied custom middleware creation in Express.js. Implemented error handling middleware and logging middleware. Practiced with Morgan for HTTP request logging.
+                    </div>
+                    <div class="log-tags">
+                        <span class="tag primary">nodejs</span>
+                        <span class="tag primary">express</span>
+                        <span class="tag">middleware</span>
+                    </div>
+                </div>
+
+                <div class="log-item">
+                    <div class="log-header">
+                        <div>
+                            <div class="log-title">MongoDB Aggregation Pipeline</div>
+                            <div class="log-meta">
+                                <span><i class="fas fa-clock"></i> 2 hours</span>
+                                <span><i class="fas fa-calendar"></i> 2 days ago</span>
+                                <span><i class="fas fa-tag"></i> Database</span>
+                            </div>
+                        </div>
+                        <div class="log-actions">
+                            <button class="action-btn" title="Edit"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn" title="Delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="log-content">
+                        Learned about MongoDB aggregation framework. Practiced with $match, $group, $sort stages. Built complex queries for data analysis and reporting.
+                    </div>
+                    <div class="log-tags">
+                        <span class="tag primary">mongodb</span>
+                        <span class="tag primary">database</span>
+                        <span class="tag">aggregation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="logs.html" class="active"><i class="fas fa-book"></i> Logs</a></li>
+            <li><a href="roadmap.html"><i class="fas fa-road"></i> Roadmaps</a></li>
+            <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Set today's date as default
+        document.getElementById('logDate').valueAsDate = new Date();
+
+        // Form submission
+        document.getElementById('logForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                title: document.getElementById('logTitle').value,
+                description: document.getElementById('logDescription').value,
+                category: document.getElementById('logCategory').value,
+                duration: document.getElementById('logDuration').value,
+                date: document.getElementById('logDate').value,
+                tags: document.getElementById('logTags').value.split(',').map(tag => tag.trim())
+            };
+            
+            console.log('New log:', formData);
+            // You'll connect this to your backend later
+            
+            // Reset form
+            this.reset();
+            document.getElementById('logDate').valueAsDate = new Date();
+            
+            // Show success message (you can implement this)
+            alert('Learning log added successfully!');
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+
+        // Close sidebar when clicking on a link (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.sidebar').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

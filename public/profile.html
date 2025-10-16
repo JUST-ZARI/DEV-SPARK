@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - DevSpark</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <a href="home.html">Dev<span>Spark</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="logs.html"><i class="fas fa-book"></i> Learning Logs</a></li>
+            <li><a href="roadmap.html"><i class="fas fa-road"></i> Roadmaps</a></li>
+            <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Mentors</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <button class="menu-toggle" style="display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer;">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Profile</h1>
+                <p>Manage your account settings and view your learning statistics</p>
+            </div>
+            <div class="user-menu">
+                <div class="user-avatar">AJ</div>
+                <div>
+                    <div style="font-weight: 600;">Alex Johnson</div>
+                    <div style="font-size: 0.8rem; color: var(--gray);">Intermediate Developer</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Layout -->
+        <div class="profile-layout">
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <div class="profile-avatar">AJ</div>
+                <div class="profile-info">
+                    <div class="profile-name">Alex Johnson</div>
+                    <div class="profile-title">Full Stack Developer</div>
+                    <p style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1rem;">
+                        Passionate about learning and building amazing web applications.
+                    </p>
+                    <button class="btn btn-outline" style="width: 100%;">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <div class="stat-value">14</div>
+                        <div class="stat-label">Streak</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">42h</div>
+                        <div class="stat-label">This Month</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Skills</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+                <!-- Personal Information -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Personal Information</h2>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                    </div>
+                    <form id="personalInfoForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" class="form-control" value="Alex" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" value="Johnson" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" value="alex.johnson@example.com" readonly>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" class="form-control" value="New York, USA" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="skillLevel">Skill Level</label>
+                                <select id="skillLevel" class="form-control" disabled>
+                                    <option selected>Intermediate</option>
+                                    <option>Beginner</option>
+                                    <option>Advanced</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" class="form-control" rows="4" readonly>Passionate full-stack developer with 2 years of experience. Currently focusing on mastering React and Node.js. Love building projects that solve real-world problems.</textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Skills & Technologies -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Skills & Technologies</h2>
+                        <button class="btn btn-outline btn-sm">
+                            <i class="fas fa-plus"></i> Add Skill
+                        </button>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">JavaScript</div>
+                                <div class="skill-level">Advanced</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">React</div>
+                                <div class="skill-level">Intermediate</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">Node.js</div>
+                                <div class="skill-level">Intermediate</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">HTML/CSS</div>
+                                <div class="skill-level">Advanced</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">MongoDB</div>
+                                <div class="skill-level">Beginner</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 40%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">Git</div>
+                                <div class="skill-level">Intermediate</div>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-fill" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Achievements</h2>
+                    </div>
+                    <div class="achievements-grid">
+                        <div class="achievement-item earned">
+                            <div class="achievement-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="achievement-name">7-Day Streak</div>
+                        </div>
+                        <div class="achievement-item earned">
+                            <div class="achievement-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="achievement-name">First Log</div>
+                        </div>
+                        <div class="achievement-item earned">
+                            <div class="achievement-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <div class="achievement-name">Roadmap Starter</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="achievement-name">30-Day Streak</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="achievement-name">Skill Master</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="achievement-name">Roadmap Complete</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="logs.html"><i class="fas fa-book"></i> Logs</a></li>
+            <li><a href="roadmap.html"><i class="fas fa-road"></i> Roadmaps</a></li>
+            <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+
+        // Close sidebar when clicking on a link (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.sidebar').classList.remove('active');
+                }
+            });
+        });
+
+        // Edit profile functionality (basic example)
+        document.querySelectorAll('.btn-outline').forEach(btn => {
+            if (btn.textContent.includes('Edit')) {
+                btn.addEventListener('click', function() {
+                    const form = document.getElementById('personalInfoForm');
+                    const inputs = form.querySelectorAll('input, select, textarea');
+                    const isReadOnly = inputs[0].readOnly;
+                    
+                    inputs.forEach(input => {
+                        if (input.tagName === 'SELECT') {
+                            input.disabled = isReadOnly;
+                        } else {
+                            input.readOnly = !isReadOnly;
+                        }
+                    });
+                    
+                    this.innerHTML = isReadOnly ? 
+                        '<i class="fas fa-save"></i> Save' : 
+                        '<i class="fas fa-edit"></i> Edit';
+                    
+                    if (!isReadOnly) {
+                        this.classList.add('btn-success');
+                        this.classList.remove('btn-outline');
+                    } else {
+                        this.classList.remove('btn-success');
+                        this.classList.add('btn-outline');
+                        // Here you would save the data to your backend
+                        alert('Profile updated successfully!');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

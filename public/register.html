@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - DevSpark</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-left">
+            <div class="logo">Dev<span>Spark</span></div>
+            <div class="welcome-text">
+                <h1>Start Your Journey!</h1>
+                <p>Join thousands of developers tracking their learning progress and accelerating their careers.</p>
+            </div>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-target"></i>
+                    </div>
+                    <div>Set and track learning goals</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <div>Create personalized learning roadmaps</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div>Visualize your progress with analytics</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>Connect with mentors and peers</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="register-right">
+            <h2 class="form-title">Create Account</h2>
+            <p class="form-subtitle">Join DevSpark and start tracking your learning journey</p>
+            
+            <form id="registerForm">
+                <div class="name-fields">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" class="form-control" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+                    <div class="password-strength">
+                        <div class="strength-bar" id="strengthBar"></div>
+                    </div>
+                    <div class="password-requirements">
+                        <div class="requirement" id="lengthReq">
+                            <i class="fas fa-circle"></i>
+                            At least 8 characters
+                        </div>
+                        <div class="requirement" id="numberReq">
+                            <i class="fas fa-circle"></i>
+                            Contains a number
+                        </div>
+                        <div class="requirement" id="specialReq">
+                            <i class="fas fa-circle"></i>
+                            Contains a special character
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="skillLevel">Current Skill Level</label>
+                    <select id="skillLevel" class="form-control" required>
+                        <option value="">Select your skill level</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. 
+                        I understand that my learning data will be used to improve my experience.
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn">Create Account</button>
+            </form>
+            
+            <div class="form-footer">
+                Already have an account? <a href="login.html">Sign in here</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Collect form data
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                password: password,
+                skillLevel: document.getElementById('skillLevel').value
+            };
+            
+            console.log('Registration attempt:', formData);
+            // You'll connect this to your backend later
+        });
+
+        // Password strength indicator
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const strengthBar = document.getElementById('strengthBar');
+            const requirements = {
+                length: password.length >= 8,
+                number: /\d/.test(password),
+                special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+            };
+            
+            // Update requirement indicators
+            document.getElementById('lengthReq').className = requirements.length ? 'requirement met' : 'requirement';
+            document.getElementById('numberReq').className = requirements.number ? 'requirement met' : 'requirement';
+            document.getElementById('specialReq').className = requirements.special ? 'requirement met' : 'requirement';
+            
+            // Calculate strength
+            const metCount = Object.values(requirements).filter(Boolean).length;
+            let strength = '';
+            
+            if (metCount === 0) {
+                strength = '';
+            } else if (metCount === 1) {
+                strength = 'strength-weak';
+            } else if (metCount === 2) {
+                strength = 'strength-medium';
+            } else {
+                strength = 'strength-strong';
+            }
+            
+            strengthBar.className = 'strength-bar ' + strength;
+        });
+    </script>
+</body>
+</html>
