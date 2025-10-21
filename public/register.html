@@ -132,15 +132,29 @@
             
             // Collect form data
             const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                password: password,
-                skillLevel: document.getElementById('skillLevel').value
-            };
+  first_name: document.getElementById('firstName').value,
+  last_name: document.getElementById('lastName').value,
+  email: document.getElementById('email').value,
+  password: document.getElementById('password').value,
+  skill_level: document.getElementById('skillLevel').value
+};
+
+            fetch('/api/users/register', {
+         method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(formData)
+})
+  .then(res => res.json())
+  .then(data => {
+    alert(data.message);
+    document.getElementById('registerForm').reset();
+  })
+  .catch(err => {
+    console.error('Error:', err);
+    alert('Something went wrong. Please try again.');
+  });
+
             
-            console.log('Registration attempt:', formData);
-            // You'll connect this to your backend later
         });
 
         // Password strength indicator
